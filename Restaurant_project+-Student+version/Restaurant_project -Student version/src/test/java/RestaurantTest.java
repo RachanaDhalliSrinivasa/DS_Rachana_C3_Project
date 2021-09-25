@@ -73,4 +73,22 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+// choose items from menu
+    // item - name, price
+    // create an order items list
+    // get prices of items in order
+    // calculate order total
+
+    //if no items are there in order list
+    // return no items in order
+
+    @Test
+    public void when_choosing_items_from_menu_order_total_should_be_calculated_and_displayed() {
+        List Menu = restaurant.getMenu();
+        restaurant.addItemsToOrder("Noodles");
+        restaurant.addItemsToOrder("Pasta");
+
+        int orderTotal = restaurant.displayOrderTotal();
+
+    }
 }
