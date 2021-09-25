@@ -23,6 +23,8 @@ class RestaurantTest {
         restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("Noodles", 349);
+        restaurant.addToMenu("Pasta", 399);
     }
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -90,5 +92,7 @@ class RestaurantTest {
 
         int orderTotal = restaurant.displayOrderTotal();
 
+        assertEquals(748, orderTotal);
     }
+
 }

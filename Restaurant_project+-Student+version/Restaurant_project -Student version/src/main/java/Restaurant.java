@@ -9,6 +9,7 @@ public class Restaurant {
     public LocalTime openingTime;
     public LocalTime closingTime;
     private List<Item> menu = new ArrayList<Item>();
+    private List<String> order = new ArrayList<String>();
 
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         this.name = name;
@@ -70,4 +71,18 @@ public class Restaurant {
         return name;
     }
 
+    public void addItemsToOrder(String item) {
+        order.add(item);
+    }
+
+    public int displayOrderTotal() {
+        int sum = 0;
+        Item orderedItem;
+        for(String item: order) {
+            orderedItem = findItemByName(item);
+            sum = sum + orderedItem.getPrice();
+        }
+        System.out.println("The order total is: " + sum);
+        return sum;
+    }
 }
